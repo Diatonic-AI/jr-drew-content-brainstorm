@@ -1,0 +1,17 @@
+site_name: JR Drew Content Brainstorm
+site_description: Documentation site generated from Obsidian vault
+repo_url: https://github.com/Diatonic-AI/jr-drew-content-brainstorm
+
+theme:
+  name: material
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+
+docs_dir: docs

@@ -1,0 +1,12 @@
+# Exclusions for repo cleanliness
+.obsidian/
+$codex/
+site/
+.venv/
+__pycache__/
+.DS_Store
+Thumbs.db
+.env
+
+# Python cache
+*.pyc
