@@ -1,0 +1,16 @@
+{
+  "name": "jrpm-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "workspaces": ["apps/*", "packages/*", "infra/*"],
+  "scripts": {
+    "bootstrap": "pnpm -C apps/web install && pnpm -C apps/electron install && pnpm -C infra/firebase/functions install",
+    "dev:web": "pnpm -C apps/web dev",
+    "dev:electron": "pnpm -C apps/electron dev",
+    "dev:emulators": "firebase emulators:start --project jrpm-dev --config infra/firebase/firebase.json --only auth,firestore,functions,hosting,storage",
+    "deploy:web": "firebase deploy --project jrpm-dev --only hosting --config infra/firebase/firebase.json",
+    "deploy:functions": "firebase deploy --project jrpm-dev --only functions --config infra/firebase/firebase.json",
+    "docs:serve": "mkdocs serve -a 0.0.0.0:8000",
+    "docs:deploy": "mkdocs gh-deploy --force"
+  }
+}

@@ -1,0 +1,59 @@
+name: Web Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/web/**'
+      - 'infra/firebase/**'
+      - '.github/workflows/web-deploy.yml'
+  pull_request:
+    paths:
+      - 'apps/web/**'
+      - 'infra/firebase/**'
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_PROJECT_ID: jrpm-dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: |
+          pnpm -C apps/web install
+      - name: Build web
+        run: pnpm -C apps/web build
+      - name: Install Firebase CLI
+        run: npm i -g firebase-tools@latest
+      - name: Authenticate to Google Cloud
+        if: ${{ secrets.FIREBASE_SERVICE_ACCOUNT != '' }}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          printf "%s" "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+      - name: Deploy preview channel on PR
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
+        run: |
+          npx firebase hosting:channel:deploy pr-${{ github.event.pull_request.number }} \
+            --project $FIREBASE_PROJECT_ID \
+            --config infra/firebase/firebase.json \
+            --json
+      - name: Deploy to production hosting
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
+        run: |
+          npx firebase deploy --only hosting \
+            --project $FIREBASE_PROJECT_ID \
+            --config infra/firebase/firebase.json

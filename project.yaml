@@ -1,0 +1,20 @@
+project:
+  name: JR Drew Content Brainstorm
+  owner: Diatonic AI
+  description: Markdown-first project management system with Python automations
+  default_branch: main
+  branches:
+    - name: develop
+      protected: false
+    - name: main
+      protected: true
+workflows:
+  docs:
+    serve: mkdocs serve -a 127.0.0.1:8000
+    build: mkdocs build --strict
+  ci:
+    lint: make lint
+    test: make test
+agents:
+  codex:
+    run: codex cli --cwd .

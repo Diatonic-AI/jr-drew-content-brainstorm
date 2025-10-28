@@ -1,17 +1,64 @@
+site_name: "JRPM Docs"
+docs_dir: "docs"
+theme:
+  name: material
+plugins:
+  - search
+  - roamlinks
+  - mermaid2
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - tables
+extra:
+  generator: false
+
 site_name: JR Drew Content Brainstorm
 site_description: Documentation site generated from Obsidian vault
 repo_url: https://github.com/Diatonic-AI/jr-drew-content-brainstorm
 
 theme:
   name: material
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.expand
+    - navigation.tracking
+    - navigation.instant
+    - toc.integrate
+    - toc.follow
+    - search.suggest
+    - search.highlight
 
 plugins:
   - search
+  - roamlinks
+  - awesome-pages
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - def_list
   - toc:
       permalink: true
   - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist
+
+use_directory_urls: true
 
 docs_dir: docs
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Section Index: guide/index.md
+  - Reference:
+      - Section Index: reference/index.md
+
+dev_addr: 127.0.0.1:8001

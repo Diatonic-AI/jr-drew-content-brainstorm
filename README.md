@@ -1,3 +1,22 @@
+# JR-Drew-Content-Brainstorm — Docker Sandbox
+
+## Quick start (Docker)
+
+```bash
+# Build
+docker compose build
+
+# Run sandbox API at http://localhost:8787
+docker compose up sandbox
+
+# (Optional) Run docs server at http://localhost:8000
+docker compose up docs
+```
+
+Env toggles:
+- `SANDBOX_SHARE_VENV=1` — use repo `.venv` (shared with host)
+- default `0` — isolated `/opt/venv` inside container
+
 # JR Drew Content Brainstorm
 
 This is your new *vault*.

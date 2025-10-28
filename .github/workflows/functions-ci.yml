@@ -1,0 +1,47 @@
+name: Functions CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'infra/firebase/functions/**'
+      - '.github/workflows/functions-ci.yml'
+  pull_request:
+    paths:
+      - 'infra/firebase/functions/**'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_PROJECT_ID: jrpm-dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install deps
+        run: pnpm -C infra/firebase/functions install
+      - name: Lint
+        run: pnpm -C infra/firebase/functions run lint || true
+      - name: Build
+        run: pnpm -C infra/firebase/functions run build
+      - name: Install Firebase CLI
+        run: npm i -g firebase-tools@latest
+      - name: Write Service Account
+        if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/') }}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          printf "%s" "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+      - name: Deploy Functions
+        if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/') }}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
+        run: |
+          npx firebase deploy --only functions --project $FIREBASE_PROJECT_ID --config infra/firebase/firebase.json

@@ -1,0 +1,17 @@
+nohup: ignoring input
+⬢  emulators: firebase-tools will drop support for Java version < 21 soon in firebase-tools@15. Please install a JDK at version 21 or above to get a compatible runtime.
+i  emulators: Starting emulators: auth, functions, firestore, hosting, storage
+⚠  firestore: Port 8081 is not open on localhost (127.0.0.1,::1), could not start Firestore Emulator.
+⚠  firestore: To select a different host/port, specify that host/port in a firebase.json config file:
+      {
+        // ...
+        "emulators": {
+          "firestore": {
+            "host": "HOST",
+            "port": "PORT"
+          }
+        }
+      }
+i  emulators: Shutting down emulators.
+
+Error: Could not start Firestore Emulator, port taken.

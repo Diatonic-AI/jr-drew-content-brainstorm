@@ -1,0 +1,100 @@
+[project]
+name = "pmx"
+version = "0.1.0"
+description = "Project management automation CLI and docs scaffolding"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Contributors" }]
+license = { text = "MIT" }
+dependencies = [
+  "typer>=0.12.0",
+  "rich>=13.0.0",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  # testing
+  "pytest>=7.0",
+  "pytest-cov>=5.0",
+  "coverage[toml]>=7.6",
+  # formatting & linting
+  "black>=24.0",
+  "isort>=5.12",
+  "ruff>=0.6.9",
+  "flake8>=7.0",
+  # typing & analysis
+  "mypy>=1.10",
+  "pyright>=1.1.389",
+  # security & quality
+  "bandit>=1.7",
+  "safety>=3.2",
+  "deptry>=0.16",
+  "codespell>=2.3",
+  # docs
+  "mkdocs>=1.6",
+  "mkdocs-material>=9.5",
+  "mkdocstrings[python]>=0.24",
+  "mkdocs-roamlinks-plugin>=0.2",
+  # debugging
+  "debugpy>=1.8",
+  "ipdb>=0.13",
+  "pudb>=2024.1",
+  # parsing / transforms
+  "libcst>=1.4",
+  "bowler>=0.9.0",
+  "fissix>=22.10.0",
+  "redbaron>=0.9.2",
+  "asttokens>=2.4",
+  "rope>=1.13",
+  # data formats
+  "pydantic>=2.7",
+  "ruamel.yaml>=0.18",
+  "tomlkit>=0.13",
+  "jsonschema>=4.23",
+]
+
+sandbox = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "gunicorn>=22.0",
+  "uvloop>=0.19; platform_system == 'Linux'",
+  "watchfiles>=0.22",
+  "python-dotenv>=1.0",
+]
+
+[project.scripts]
+pmx = "pmx.cli:app"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E","F","I","UP","B","A","C4","SIM","PL","RUF"]
+ignore = ["E203"]
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203"]
+
+[tool.mypy]
+ignore_missing_imports = true
+pretty = true
+warn_unused_ignores = true
+warn_unreachable = true
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true
