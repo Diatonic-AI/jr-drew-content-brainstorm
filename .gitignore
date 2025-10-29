@@ -31,3 +31,4 @@ Thumbs.db
 *.pyc
 .npm/
 rize-turbo/
+apps/web-next/.next/
