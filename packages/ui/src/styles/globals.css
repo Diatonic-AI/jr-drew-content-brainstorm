@@ -1,0 +1,86 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  /* Haptic effects */
+  .fx-press {
+    @apply active:scale-95 transition-transform;
+    transition-duration: var(--duration-x-fast);
+    transition-timing-function: var(--easing-smooth);
+  }
+
+  .fx-pulse {
+    animation: pulse var(--duration-slow) var(--easing-smooth) infinite;
+  }
+
+  .fx-glow {
+    @apply shadow-lg;
+    box-shadow: 0 16px 40px rgba(124, 58, 237, 0.45);
+    animation: glow var(--duration-slow) var(--easing-smooth) infinite alternate;
+  }
+
+  .fx-slide-in {
+    animation: slide-in var(--duration-base) var(--easing-smooth);
+  }
+
+  .glass {
+    background-color: color-mix(in srgb, var(--background) 82%, transparent);
+    @apply backdrop-blur-md border border-border;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-xl hover:scale-[1.02];
+    border-color: color-mix(in srgb, var(--border) 65%, var(--primary) 35%);
+  }
+
+  .card-hover:hover {
+    border-color: color-mix(in srgb, var(--border) 20%, var(--primary) 80%);
+  }
+
+  .ring-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

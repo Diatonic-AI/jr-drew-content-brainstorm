@@ -1,15 +1,24 @@
-import { Navigate, Outlet } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../lib/firebase';
+import { Navigate, Outlet } from 'react-router-dom'
 
-export default function ProtectedRoute() {
-  const [ready, setReady] = useState(false);
-  const [user, setUser] = useState(() => auth.currentUser);
+import { AppShell } from '@/app/AppShell'
+import { useAuthStore } from '@/stores/authStore'
 
-  useEffect(() => onAuthStateChanged(auth, u => { setUser(u); setReady(true); }), []);
+const ProtectedRoute = () => {
+  const { user } = useAuthStore()
 
-  if (!ready) return null;
-  if (!user) return <Navigate to="/login" replace />;
-  return <Outlet />;
+  // TEMPORARY: For development, bypass auth check
+  // TODO: Remove this bypass once authentication flow is implemented
+  const isDevelopment = import.meta.env.DEV
+
+  if (!user && !isDevelopment) {
+    return <Navigate to="/login" replace />
+  }
+
+  return (
+    <AppShell>
+      <Outlet />
+    </AppShell>
+  )
 }
+
+export default ProtectedRoute

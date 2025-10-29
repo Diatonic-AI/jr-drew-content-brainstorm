@@ -1,8 +1,22 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    match /orgs/{orgId}/{allPaths=**} {
-      allow read, write: if request.auth != null;
+    function isSignedIn() { return request.auth != null; }
+    function membershipPath(orgId) { return /databases/(default)/documents/orgs/$(orgId)/members/$(request.auth.uid); }
+    function orgMember(orgId) { return isSignedIn() && exists(membershipPath(orgId)); }
+
+    // Generic org assets (limit access to members)
+    match /orgs/{orgId}/assets/{fileId} {
+      allow read: if orgMember(orgId);
+      allow write: if orgMember(orgId) && request.resource.size < 20 * 1024 * 1024; // <20MB
+    }
+
+    // User profile pictures inside org scope
+    match /orgs/{orgId}/avatars/{uid}/{fileName} {
+      allow read: if orgMember(orgId);
+      allow write: if orgMember(orgId) && request.auth.uid == uid
+        && request.resource.contentType.matches('image/.*')
+        && request.resource.size < 5 * 1024 * 1024; // <5MB
     }
   }
 }

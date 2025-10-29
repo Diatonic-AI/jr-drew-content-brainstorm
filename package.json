@@ -2,7 +2,11 @@
   "name": "jrpm-monorepo",
   "private": true,
   "packageManager": "pnpm@9.12.0",
-  "workspaces": ["apps/*", "packages/*", "infra/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "infra/*"
+  ],
   "scripts": {
     "bootstrap": "pnpm -C apps/web install && pnpm -C apps/electron install && pnpm -C infra/firebase/functions install",
     "dev:web": "pnpm -C apps/web dev",
@@ -11,6 +15,29 @@
     "deploy:web": "firebase deploy --project jrpm-dev --only hosting --config infra/firebase/firebase.json",
     "deploy:functions": "firebase deploy --project jrpm-dev --only functions --config infra/firebase/firebase.json",
     "docs:serve": "mkdocs serve -a 0.0.0.0:8000",
-    "docs:deploy": "mkdocs gh-deploy --force"
+    "docs:deploy": "mkdocs gh-deploy --force",
+    "lint:warn": "eslint . --ext .ts,.tsx,.js,.jsx --config eslint.warn.config.mjs",
+    "lint:strict": "eslint . --ext .ts,.tsx,.js,.jsx --config eslint.strict.config.mjs",
+    "lint:report": "eslint . --ext .ts,.tsx,.js,.jsx --config eslint.warn.config.mjs -f json -o reports/eslint.json",
+    "audit:firebase": "node scripts/firebase-audit.mjs",
+    "inventory:frontend": "node scripts/inventory-frontend.mjs"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-sonarjs": "^3.0.5",
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "eslint-plugin-unicorn": "^62.0.0",
+    "fast-glob": "^3.3.3",
+    "globals": "^16.4.0",
+    "typescript": "^5.9.3"
   }
 }
