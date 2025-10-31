@@ -14,7 +14,10 @@ coverage
 $codex/
 .codex/
 .backup/
-logs/
+logs/**/*.log
+logs/**/*.pid
+!logs/**/.keep
+# Structured logs: ignore only files, keep directory tree via .keep placeholders
 *.pid
 *.log
 reports/*.json

@@ -8,6 +8,16 @@ CODEX_DIR="$REPO_DIR/.codex"
 BUILD_DIR="$CODEX_DIR/.build"
 mkdir -p "$BUILD_DIR"
 
+# Structured logging (optional, disable with NO_LOGS=1)
+if [[ "${NO_LOGS:-0}" != "1" ]]; then
+  FRONTEND_LOG_ROOT="logs/frontend/logs"
+  mkdir -p "$FRONTEND_LOG_ROOT"
+  RUN_LOG="$FRONTEND_LOG_ROOT/codex-run.log"
+  # Append to run log; keep stdout visible via tee
+  exec > >(tee -a "$RUN_LOG") 2>&1
+  echo "[run.sh] Logging Codex execution to $RUN_LOG" >&2
+fi
+
 # Prefer project venv for any Python used in this script
 if [[ -d "$REPO_DIR/.venv/bin" ]]; then
   export VIRTUAL_ENV="$REPO_DIR/.venv"

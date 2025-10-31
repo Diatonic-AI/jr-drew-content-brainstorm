@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
+# Structured logs base (ensure exists)
+LOG_ROOT="logs/firebase/logs"
+PID_ROOT="logs/firebase/pids"
+mkdir -p "$LOG_ROOT" "$PID_ROOT"
+SCRIPT_LOG="$LOG_ROOT/restart-emulators.log"
+exec > >(tee -a "$SCRIPT_LOG") 2>&1
+
 script_name="${0##*/}"
 log() { printf '[%s] %s\n' "$script_name" "$*"; }
 
 main() {
-    log "Checking for running Firebase emulators..."
+    log "Checking for running Firebase emulators... (log: $SCRIPT_LOG)"
     
     # Find emulator processes
     EMULATOR_PIDS=$(ps -ef | grep -E 'firebase.*emulator|cloud-firestore-emulator|pubsub-emulator' | grep -v grep | awk '{print $2}' || true)
