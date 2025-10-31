@@ -32,10 +32,6 @@ dev = [
   "deptry>=0.16",
   "codespell>=2.3",
   # docs
-  "mkdocs>=1.6",
-  "mkdocs-material>=9.5",
-  "mkdocstrings[python]>=0.24",
-  "mkdocs-roamlinks-plugin>=0.2",
   # debugging
   "debugpy>=1.8",
   "ipdb>=0.13",

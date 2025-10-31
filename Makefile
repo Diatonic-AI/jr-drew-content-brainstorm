@@ -1,6 +1,6 @@
 # Makefile
 
-.PHONY: setup lint format test docs-serve docs-build agent
+.PHONY: setup lint format test agent
 
 VENV=.venv
 PY=python3
@@ -19,11 +19,6 @@ format:
 test:
 	. $(VENV)/bin/activate && pytest -q
 
-docs-serve:
-	. $(VENV)/bin/activate && mkdocs serve
-
-docs-build:
-	. $(VENV)/bin/activate && mkdocs build --strict
 
 agent:
 	./scripts/run-agent.sh

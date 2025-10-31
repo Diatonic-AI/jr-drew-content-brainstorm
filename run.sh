@@ -48,14 +48,6 @@ PROMPT_FILE="$BUILD_DIR/assembled_prompt.md"
     done < <(ls -1 "$CODEX_DIR"/prompts/*.md | sort)
   fi
   echo "\n## Auto-Detected Project Context"
-  # Include mkdocs.yml if present
-  if [[ -f "$REPO_DIR/mkdocs.yml" ]] || [[ -f "$REPO_DIR/mkdocs.yaml" ]]; then
-    MKCFG="$REPO_DIR/mkdocs.yml"; [[ -f "$REPO_DIR/mkdocs.yaml" ]] && MKCFG="$REPO_DIR/mkdocs.yaml"
-    echo "\n### Existing mkdocs config: $(basename "$MKCFG")"
-    echo '\n```yaml'
-    sed -e 's/\t/  /g' "$MKCFG"
-    echo '\n```'
-  fi
   # Include docs/ tree summary
   if [[ -d "$REPO_DIR/docs" ]]; then
     echo "\n### docs/ tree (dirs up to depth 3)"
