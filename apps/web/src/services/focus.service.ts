@@ -1,6 +1,6 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { AmbientSound, FocusGoal, FocusSession, FocusTimerSnapshot } from '@/types/focus'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const FocusService = {
   fetchSessions(): Promise<FocusSession[]> {

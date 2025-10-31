@@ -1,9 +1,10 @@
 import { collection, doc, type Firestore } from 'firebase/firestore';
+
 import { buildConverter } from './converters';
-import { UserDoc } from '../../schemas/user';
 import { OrgSchema } from '../../schemas/organization';
 import { ProjectSchema } from '../../schemas/project';
 import { TaskSchema } from '../../schemas/task';
+import { UserDoc } from '../../schemas/user';
 
 export const usersCollection = (db: Firestore) =>
   collection(db, 'users').withConverter(buildConverter(UserDoc));

@@ -1,6 +1,6 @@
+import { Badge } from '@/components/ui/Badge'
 import type { AmbientSound } from '@/types/focus'
 
-import { Badge } from '@/components/ui/Badge'
 
 export interface SoundCardProps {
   sound: AmbientSound

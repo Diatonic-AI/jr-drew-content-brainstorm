@@ -21,6 +21,7 @@ export interface UserProfile {
   jobTitle?: string
   locale: string
   timeZone: string
+  currentOrgId?: string
   createdAt: string
   updatedAt?: string
   memberships: TeamMembership[]

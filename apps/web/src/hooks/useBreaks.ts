@@ -1,11 +1,11 @@
-import { useCallback } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
+import { BreaksService } from '@/services/breaks.service'
+import { useActivityStore } from '@/stores/activityStore'
+import { useBreaksStore } from '@/stores/breaksStore'
 import type { BreakPreference } from '@/types/breaks'
 
-import { useBreaksStore } from '@/stores/breaksStore'
-import { useActivityStore } from '@/stores/activityStore'
-import { BreaksService } from '@/services/breaks.service'
 
 export const useBreaks = () => {
   const {

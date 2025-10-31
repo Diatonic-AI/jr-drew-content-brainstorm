@@ -1,1 +1,0 @@
-const functions=require('firebase-functions');const admin=require('firebase-admin');try{admin.initializeApp()}catch(e){};exports.ping=functions.https.onRequest((req,res)=>res.json({ok:true,ts:Date.now()}));

@@ -1,3 +1,4 @@
+import type { AppNotification } from '@/stores/notificationStore';
 import type {
   ActivityAnomaly,
   ActivityDaySummary,
@@ -11,6 +12,7 @@ import type { AmbientSound, FocusGoal, FocusSession, FocusTimerSnapshot } from '
 import type { Integration, IntegrationConnection } from '@/types/integrations';
 import type { Project, ProjectSummary } from '@/types/projects';
 import type { ScoreSnapshot } from '@/types/scores';
+import type { Task } from '@/types/tasks';
 import type {
   TrackingAlert,
   TrackingConfiguration,
@@ -18,8 +20,6 @@ import type {
   TrackingDiagnostics,
   TrackingSession
 } from '@/types/tracking';
-import type { Task } from '@/types/tasks';
-import type { AppNotification } from '@/stores/notificationStore';
 
 const TODAY = '2025-10-29';
 const YESTERDAY = '2025-10-28';

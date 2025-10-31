@@ -1,0 +1,37 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "orgs": {
+      "$orgId": {
+        "presence": {
+          "$uid": {
+            ".read": "auth != null",
+            ".write": "auth != null && auth.uid == $uid",
+            ".validate": "newData.hasChildren(['status', 'lastSeen'])",
+            "status": {
+              ".validate": "newData.isString() && (newData.val() == 'online' || newData.val() == 'away' || newData.val() == 'offline')"
+            },
+            "lastSeen": {
+              ".validate": "newData.isNumber()"
+            }
+          }
+        },
+        "realtime_notifications": {
+          "$notificationId": {
+            ".read": "auth != null",
+            ".write": false
+          }
+        }
+      }
+    },
+    "users": {
+      "$uid": {
+        "status": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.uid == $uid"
+        }
+      }
+    }
+  }
+}

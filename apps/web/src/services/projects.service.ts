@@ -1,6 +1,6 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { Project, ProjectSummary } from '@/types/projects'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const ProjectsService = {
   list(): Promise<Project[]> {

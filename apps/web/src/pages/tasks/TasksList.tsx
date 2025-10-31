@@ -1,6 +1,7 @@
+import type { ColumnDef } from '@tanstack/react-table'
+
 import { DataTable } from '@/components/ui/Table'
 import { useTasks } from '@/hooks/useTasks'
-import type { ColumnDef } from '@tanstack/react-table'
 
 const TasksListPage = () => {
   const { tasks, isLoading } = useTasks()

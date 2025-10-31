@@ -1,5 +1,5 @@
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { initializeApp } from 'firebase/app';
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { getAuth, GoogleAuthProvider, connectAuthEmulator } from 'firebase/auth';
 import {
   initializeFirestore,
@@ -7,8 +7,8 @@ import {
   persistentMultipleTabManager,
   connectFirestoreEmulator
 } from 'firebase/firestore';
-import { getStorage, connectStorageEmulator } from 'firebase/storage';
 import { getFunctions, connectFunctionsEmulator } from 'firebase/functions';
+import { getStorage, connectStorageEmulator } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,

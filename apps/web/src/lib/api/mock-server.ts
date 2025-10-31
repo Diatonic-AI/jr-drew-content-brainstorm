@@ -1,3 +1,4 @@
+import type { AppNotification } from '@/stores/notificationStore';
 import type { ActivityEvent, ActivityTimelineBlock } from '@/types/activity';
 import type { AIInsight, CoachSuggestion } from '@/types/ai';
 import type { BreakAnalytics, BreakPreference, BreakReminder, BreakSession } from '@/types/breaks';
@@ -5,9 +6,8 @@ import type { AmbientSound, FocusGoal, FocusSession, FocusTimerSnapshot } from '
 import type { IntegrationConnection, Integration } from '@/types/integrations';
 import type { Project, ProjectSummary } from '@/types/projects';
 import type { ScoreSnapshot } from '@/types/scores';
-import type { TrackingConfiguration, TrackingDayTotals } from '@/types/tracking';
 import type { Task } from '@/types/tasks';
-import type { AppNotification } from '@/stores/notificationStore';
+import type { TrackingConfiguration, TrackingDayTotals } from '@/types/tracking';
 
 import { mockDatabase, type MockDatabase } from './mock-data';
 

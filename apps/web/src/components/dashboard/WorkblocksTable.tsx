@@ -1,11 +1,11 @@
+import type { ColumnDef } from '@tanstack/react-table'
 import { format } from 'date-fns'
 import * as React from 'react'
-import type { ColumnDef } from '@tanstack/react-table'
-
-import type { Workblock } from '@/types/workblocks'
 
 import { Badge } from '@/components/ui/Badge'
 import { DataTable } from '@/components/ui/Table'
+import type { Workblock } from '@/types/workblocks'
+
 
 export interface WorkblocksTableProps {
   workblocks: Workblock[]

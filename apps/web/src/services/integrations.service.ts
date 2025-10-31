@@ -1,6 +1,6 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { Integration, IntegrationConnection } from '@/types/integrations'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const IntegrationsService = {
   list(): Promise<Integration[]> {

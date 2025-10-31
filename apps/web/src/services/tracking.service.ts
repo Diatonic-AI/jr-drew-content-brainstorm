@@ -1,7 +1,7 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { ActivityEvent, ActivityTimelineBlock } from '@/types/activity'
 import type { TrackingConfiguration, TrackingDayTotals } from '@/types/tracking'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const TrackingService = {
   fetchDayTotals(date: string): Promise<TrackingDayTotals> {

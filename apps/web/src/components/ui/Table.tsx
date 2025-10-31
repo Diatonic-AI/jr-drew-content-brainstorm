@@ -156,7 +156,11 @@ export function DataTable<TData>({
     <div className="flex flex-col gap-3">
       {enableSearch ? (
         <div className="flex items-center justify-between gap-3">
+          <label htmlFor="data-table-search" className="sr-only">
+            Search table
+          </label>
           <input
+            id="data-table-search"
             value={globalFilter ?? ''}
             onChange={(event) => setGlobalFilter(event.target.value)}
             placeholder={searchPlaceholder}
@@ -194,6 +198,13 @@ export function DataTable<TData>({
                               : 'cursor-default'
                           )}
                           onClick={header.column.getToggleSortingHandler()}
+                          disabled={!header.column.getCanSort()}
+                          aria-label={`Sort by ${String(header.column.columnDef.header)}`}
+                          aria-sort={
+                            header.column.getIsSorted() === 'asc' ? 'ascending' :
+                            header.column.getIsSorted() === 'desc' ? 'descending' :
+                            'none'
+                          }
                         >
                           {flexRender(
                             header.column.columnDef.header,
@@ -216,6 +227,8 @@ export function DataTable<TData>({
                   <TableRow
                     key={row.id}
                     data-state={row.getIsSelected() && 'selected'}
+                    role={onRowClick ? 'button' : undefined}
+                    tabIndex={onRowClick ? 0 : undefined}
                     onClick={
                       onRowClick
                         ? () => {
@@ -223,6 +236,12 @@ export function DataTable<TData>({
                           }
                         : undefined
                     }
+                    onKeyDown={(event) => {
+                      if (onRowClick && (event.key === 'Enter' || event.key === ' ')) {
+                        event.preventDefault()
+                        onRowClick(row.original)
+                      }
+                    }}
                     className={cn(
                       onRowClick && 'cursor-pointer hover:bg-muted/40'
                     )}

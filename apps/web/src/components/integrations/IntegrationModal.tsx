@@ -1,8 +1,8 @@
 import * as React from 'react'
 
+import { Modal, ModalContent, ModalDescription, ModalFooter, ModalHeader, ModalTitle, ModalClose } from '@/components/ui/Modal'
 import type { Integration } from '@/types/integrations'
 
-import { Modal, ModalContent, ModalDescription, ModalFooter, ModalHeader, ModalTitle, ModalClose } from '@/components/ui/Modal'
 
 export interface IntegrationModalProps {
   integration?: Integration

@@ -1,7 +1,7 @@
+import { ThemeProvider } from '@diatonic/ui'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { ThemeProvider } from '@diatonic/ui'
 
 import App from './App'
 import '@diatonic/ui/styles'

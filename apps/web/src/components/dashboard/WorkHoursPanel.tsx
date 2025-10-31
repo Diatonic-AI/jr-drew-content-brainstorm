@@ -1,8 +1,8 @@
 import { format } from 'date-fns'
 
+import { Badge } from '@/components/ui/Badge'
 import type { TrackingDayTotals, TrackingStatus, WorkdayHours } from '@/types/tracking'
 
-import { Badge } from '@/components/ui/Badge'
 
 export interface WorkHoursPanelProps {
   status: TrackingStatus

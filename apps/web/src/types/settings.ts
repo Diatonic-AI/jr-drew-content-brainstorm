@@ -1,8 +1,8 @@
+import type { AIModel } from '@/types/ai'
 import type { BreakPreference } from '@/types/breaks'
 import type { FocusModeSettings } from '@/types/focus'
 import type { IntegrationId } from '@/types/integrations'
 import type { TrackingConfiguration } from '@/types/tracking'
-import type { AIModel } from '@/types/ai'
 
 export type ThemePreference = 'system' | 'light' | 'dark'
 export type NotificationChannel = 'email' | 'push' | 'desktop' | 'sms' | 'slack'

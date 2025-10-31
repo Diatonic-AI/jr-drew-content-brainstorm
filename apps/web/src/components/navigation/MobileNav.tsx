@@ -18,11 +18,14 @@ export const MobileNav = () => {
         type="button"
         className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border"
         onClick={() => setOpen((value) => !value)}
+        aria-label="Toggle navigation menu"
+        aria-expanded={open}
+        aria-controls="mobile-nav-menu"
       >
         <Menu className="h-5 w-5" />
       </button>
       {open ? (
-        <nav className="mt-3 space-y-2 rounded-lg border border-border bg-card p-3 text-sm">
+        <nav id="mobile-nav-menu" role="navigation" className="mt-3 space-y-2 rounded-lg border border-border bg-card p-3 text-sm">
           {items.map((item) => (
             <Link
               key={item.to}

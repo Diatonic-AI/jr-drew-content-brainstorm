@@ -7,7 +7,11 @@ import { RoleGuard } from '@/routes/RoleGuard'
 
 const LandingPage = lazy(() => import('@/pages/public/Landing'))
 const LoginPage = lazy(() => import('@/pages/public/Login'))
+const SignupPage = lazy(() => import('@/pages/public/Signup'))
 const RegisterPage = lazy(() => import('@/pages/public/Register'))
+const VerifyEmailPage = lazy(() => import('@/pages/public/VerifyEmail'))
+const VerifyEmailCodePage = lazy(() => import('@/pages/auth/VerifyEmailCode'))
+const SetupMFAPage = lazy(() => import('@/pages/auth/SetupMFA'))
 const ForgotPasswordPage = lazy(() => import('@/pages/public/ForgotPassword'))
 const ResetPasswordPage = lazy(() => import('@/pages/public/ResetPassword'))
 
@@ -37,6 +41,7 @@ const TutorialsPage = lazy(() => import('@/pages/documentation/Tutorials'))
 
 const SettingsLayout = lazy(() => import('@/pages/settings/SettingsLayout'))
 const AccountSettingsPage = lazy(() => import('@/pages/settings/Account'))
+const SecuritySettingsPage = lazy(() => import('@/pages/settings/Security'))
 const SystemSettingsPage = lazy(() => import('@/pages/settings/System'))
 const AISettingsPage = lazy(() => import('@/pages/settings/AI'))
 const BillingSettingsPage = lazy(() => import('@/pages/settings/Billing'))
@@ -69,6 +74,10 @@ export const publicRoutes: RouteObject[] = [
   { path: '/', element: <Navigate to="/dashboard" replace /> },
   { path: '/landing', element: <LandingPage /> },
   { path: '/login', element: <LoginPage /> },
+  { path: '/signup', element: <SignupPage /> },
+  { path: '/verify-email', element: <VerifyEmailPage /> },
+  { path: '/verify-email-code', element: <VerifyEmailCodePage /> },
+  { path: '/setup-mfa', element: <SetupMFAPage /> },
   { path: '/register', element: <RegisterPage /> },
   { path: '/forgot-password', element: <ForgotPasswordPage /> },
   { path: '/reset-password', element: <ResetPasswordPage /> },
@@ -102,6 +111,7 @@ export const protectedRoutes: RouteObject[] = [
         element: <SettingsLayout />,
         children: [
           { path: 'account', element: <AccountSettingsPage /> },
+          { path: 'security', element: <SecuritySettingsPage /> },
           { path: 'system', element: <SystemSettingsPage /> },
           { path: 'ai', element: <AISettingsPage /> },
           { path: 'billing', element: <BillingSettingsPage /> },

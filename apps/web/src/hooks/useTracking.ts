@@ -1,12 +1,12 @@
-import { useCallback } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
+import { TrackingService } from '@/services/tracking.service'
+import { useActivityStore } from '@/stores/activityStore'
+import { useTrackingStore } from '@/stores/trackingStore'
 import type { ActivityTimelineBlock } from '@/types/activity'
 import type { TrackingConfiguration, TrackingSession, TrackingState } from '@/types/tracking'
 
-import { useTrackingStore } from '@/stores/trackingStore'
-import { useActivityStore } from '@/stores/activityStore'
-import { TrackingService } from '@/services/tracking.service'
 
 export const useTracking = () => {
   const {

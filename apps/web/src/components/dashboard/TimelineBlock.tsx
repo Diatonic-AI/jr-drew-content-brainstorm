@@ -1,3 +1,4 @@
+import { format, parseISO } from 'date-fns'
 import type { ActivityTimelineBlock, ActivityCategory } from '@/types/activity'
 
 const categoryColors: Record<ActivityCategory, string> = {
@@ -35,10 +36,14 @@ export const TimelineBlock = ({
   onClick,
 }: TimelineBlockProps) => {
   const colorClass = categoryColors[block.category] ?? categoryColors.misc
+  const startLabel = format(parseISO(block.startTime), 'h:mm a')
+  const endLabel = format(parseISO(block.endTime), 'h:mm a')
+  const scoreText = block.score !== undefined ? `, score ${Math.round(block.score)}` : ''
 
   return (
     <button
       type="button"
+      aria-label={`${block.category} activity from ${startLabel} to ${endLabel}${scoreText}`}
       onClick={() => onClick?.(block)}
       className={`group absolute top-1 h-10 rounded-md border border-border/30 shadow-sm transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${colorClass} ${
         isCurrent ? 'ring-2 ring-primary ring-offset-1' : ''

@@ -1,10 +1,10 @@
-import { useCallback } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
+import { ProjectsService } from '@/services/projects.service'
+import { useProjectsStore } from '@/stores/projectsStore'
 import type { Project, ProjectId, ProjectSummary } from '@/types/projects'
 
-import { useProjectsStore } from '@/stores/projectsStore'
-import { ProjectsService } from '@/services/projects.service'
 
 export const useProjects = () => {
   const {

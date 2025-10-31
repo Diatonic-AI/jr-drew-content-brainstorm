@@ -1,5 +1,5 @@
-import * as React from 'react'
 import * as ProgressPrimitive from '@radix-ui/react-progress'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -55,7 +55,7 @@ export const Progress = React.forwardRef<
         />
       </ProgressPrimitive.Root>
       {showLabel && (
-        <span className="text-xs font-medium text-muted-foreground tabular-nums">
+        <span className="text-xs font-medium tabular-nums text-muted-foreground">
           {label ?? `${clamped}%`}
         </span>
       )}
@@ -95,7 +95,7 @@ export const CircularProgress = ({
     >
       <svg width={size} height={size} className="-rotate-90 transform">
         <circle
-          className="text-muted stroke-current"
+          className="stroke-current text-muted"
           strokeWidth={strokeWidth}
           stroke="currentColor"
           fill="transparent"
@@ -120,7 +120,7 @@ export const CircularProgress = ({
         />
       </svg>
       {showLabel ? (
-        <span className="absolute text-sm font-semibold text-foreground tabular-nums">
+        <span className="absolute text-sm font-semibold tabular-nums text-foreground">
           {Math.round(clamped)}%
         </span>
       ) : null}

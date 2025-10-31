@@ -1,9 +1,8 @@
-import type { ComponentType, SVGProps } from 'react'
-import { useMemo } from 'react'
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from '@diatonic/ui'
 import { motion } from 'framer-motion'
 import { ActivitySquare, BarChart3, PlugZap, Sparkles } from 'lucide-react'
-
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from '@diatonic/ui'
+import type { ComponentType, SVGProps } from 'react'
+import { useMemo } from 'react'
 
 import { useEntitiesStore } from '../stores/entities'
 

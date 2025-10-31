@@ -1,9 +1,8 @@
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Input } from '@diatonic/ui'
+import { Loader2, Plug, ShieldCheck } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Loader2, Plug, ShieldCheck } from 'lucide-react'
 import { toast } from 'sonner'
-
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Input } from '@diatonic/ui'
 
 import { useEntitiesStore } from '../../stores/entities'
 

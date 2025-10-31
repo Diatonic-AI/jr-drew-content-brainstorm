@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
 
+import { useAIStore } from '@/stores/aiStore'
 import type { AIMessage, VoiceCommand } from '@/types/ai'
 
-import { useAIStore } from '@/stores/aiStore'
 
 export const useVoiceAI = () => {
   const {

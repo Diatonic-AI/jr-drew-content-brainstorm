@@ -1,7 +1,7 @@
+import { Badge } from '@/components/ui/Badge'
+import { CircularProgress } from '@/components/ui/Progress'
 import type { FocusSession, FocusTimerSnapshot } from '@/types/focus'
 
-import { CircularProgress } from '@/components/ui/Progress'
-import { Badge } from '@/components/ui/Badge'
 
 export interface FocusTimerProps {
   snapshot?: FocusTimerSnapshot

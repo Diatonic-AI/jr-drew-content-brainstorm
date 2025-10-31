@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { onSnapshot, Query, FirestoreError, DocumentData } from 'firebase/firestore';
 import { useQueryClient } from '@tanstack/react-query';
+import { onSnapshot, type Query, type FirestoreError, type DocumentData } from 'firebase/firestore';
+import { useEffect } from 'react';
 
 interface UseRealtimeQueryOptions<T> {
   queryKey: unknown[];

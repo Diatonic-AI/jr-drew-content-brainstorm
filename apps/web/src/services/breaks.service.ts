@@ -1,6 +1,6 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { BreakAnalytics, BreakPreference, BreakReminder, BreakSession } from '@/types/breaks'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const BreaksService = {
   fetchAnalytics(date: string): Promise<BreakAnalytics> {

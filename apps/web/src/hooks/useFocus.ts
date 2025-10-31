@@ -1,6 +1,8 @@
-import { useCallback } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
+import { FocusService } from '@/services/focus.service'
+import { useFocusStore } from '@/stores/focusStore'
 import type {
   AmbientSound,
   FocusGoal,
@@ -9,8 +11,6 @@ import type {
   FocusTimerSnapshot,
 } from '@/types/focus'
 
-import { useFocusStore } from '@/stores/focusStore'
-import { FocusService } from '@/services/focus.service'
 
 export const useFocus = () => {
   const {

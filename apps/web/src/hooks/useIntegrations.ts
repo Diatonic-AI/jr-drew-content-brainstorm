@@ -1,11 +1,11 @@
-import { useCallback } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
+import { IntegrationsService } from '@/services/integrations.service'
+import { useNotificationStore } from '@/stores/notificationStore'
+import { useSettingsStore } from '@/stores/settingsStore'
 import type { Integration, IntegrationConnection, IntegrationId } from '@/types/integrations'
 
-import { useSettingsStore } from '@/stores/settingsStore'
-import { useNotificationStore } from '@/stores/notificationStore'
-import { IntegrationsService } from '@/services/integrations.service'
 
 export const useIntegrations = () => {
   const { settings, updateSettings } = useSettingsStore()

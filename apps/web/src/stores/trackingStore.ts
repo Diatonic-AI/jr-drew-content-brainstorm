@@ -11,6 +11,7 @@ import type {
   TrackingDiagnostics,
   TrackingSession,
   TrackingState,
+  TrackingDayTotals,
 } from '@/types/tracking'
 
 interface TrackingStore {

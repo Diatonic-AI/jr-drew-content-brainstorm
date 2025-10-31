@@ -1,10 +1,10 @@
-import { useCallback } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
+import { TasksService } from '@/services/tasks.service'
+import { useTasksStore } from '@/stores/tasksStore'
 import type { Task, TaskBoardColumn, TaskId, TaskStatus } from '@/types/tasks'
 
-import { useTasksStore } from '@/stores/tasksStore'
-import { TasksService } from '@/services/tasks.service'
 
 export const createDefaultBoard = (items: Task[]): TaskBoardColumn[] =>
   Array.from(

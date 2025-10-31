@@ -1,6 +1,6 @@
+import { Badge, Button, Input, ThemeToggle } from '@diatonic/ui'
 import { Sparkles, Bell, Command } from 'lucide-react'
 
-import { Badge, Button, Input, ThemeToggle } from '@diatonic/ui'
 
 import { useUIStore } from '../stores/ui'
 

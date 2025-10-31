@@ -23,7 +23,7 @@ service cloud.firestore {
       // Members subcollection
       match /members/{uid} {
         allow read: if isAdmin(orgId) || request.auth.uid == uid;
-        allow create: if isOwner(orgId);
+        allow create: if isOwner(orgId) || (request.auth.uid == uid && request.resource.data.role == 'owner');
         allow update: if isOwner(orgId) || (request.auth.uid == uid && !("role" in request.resource.data));
         allow delete: if isOwner(orgId);
       }
@@ -50,20 +50,83 @@ service cloud.firestore {
           allow delete: if isAdmin(orgId);
         }
 
-        // Sprints
-        match /sprints/{sprintId} {
-          allow read: if orgMember(orgId);
-          allow create, update: if isContributor(orgId);
-          allow delete: if isAdmin(orgId);
-        }
+      // Sprints
+      match /sprints/{sprintId} {
+        allow read: if orgMember(orgId);
+        allow create, update: if isContributor(orgId);
+        allow delete: if isAdmin(orgId);
       }
     }
 
-    // Users documents - self only
-    match /users/{uid} {
-      allow read: if isSignedIn() && request.auth.uid == uid;
-      allow update: if isSignedIn() && request.auth.uid == uid && !('role' in request.resource.data);
-      allow create: if isSignedIn() && request.auth.uid == uid;
+    // Time tracking sessions
+    match /timeSessions/{sessionId} {
+      allow read: if orgMember(orgId);
+      allow create: if isContributor(orgId) && request.resource.data.userId == request.auth.uid;
+      allow update: if isContributor(orgId) && resource.data.userId == request.auth.uid;
+      allow delete: if isAdmin(orgId) || resource.data.userId == request.auth.uid;
+    }
+
+    // Time entries
+    match /timeEntries/{entryId} {
+      allow read: if orgMember(orgId);
+      allow create: if isContributor(orgId) && request.resource.data.userId == request.auth.uid;
+      allow update: if isContributor(orgId) && resource.data.userId == request.auth.uid;
+      allow delete: if isAdmin(orgId) || resource.data.userId == request.auth.uid;
+    }
+
+    // Goals
+    match /goals/{goalId} {
+      allow read: if orgMember(orgId);
+      allow create: if isContributor(orgId) && request.resource.data.userId == request.auth.uid;
+      allow update: if resource.data.userId == request.auth.uid;
+      allow delete: if resource.data.userId == request.auth.uid;
+    }
+
+    // Breaks
+    match /breaks/{breakId} {
+      allow read: if orgMember(orgId);
+      allow create: if isContributor(orgId) && request.resource.data.userId == request.auth.uid;
+      allow update: if resource.data.userId == request.auth.uid;
+      allow delete: if resource.data.userId == request.auth.uid;
+    }
+
+    // Focus sessions
+    match /focusSessions/{sessionId} {
+      allow read: if orgMember(orgId);
+      allow create: if isContributor(orgId) && request.resource.data.userId == request.auth.uid;
+      allow update: if resource.data.userId == request.auth.uid;
+      allow delete: if resource.data.userId == request.auth.uid;
+    }
+
+    // Categories
+    match /categories/{categoryId} {
+      allow read: if orgMember(orgId);
+      allow create: if isContributor(orgId);
+      allow update: if isContributor(orgId);
+      allow delete: if isAdmin(orgId);
+    }
+
+    // Integrations
+    match /integrations/{integrationId} {
+      allow read: if orgMember(orgId);
+      allow create: if isAdmin(orgId);
+      allow update: if isAdmin(orgId);
+      allow delete: if isAdmin(orgId);
+    }
+
+    // Activity/Audit logs
+    match /activity/{activityId} {
+      allow read: if orgMember(orgId);
+      allow create: if isSignedIn(); // System can create
+      allow update, delete: if false; // Immutable
     }
   }
+
+  // Users documents - self only
+  match /users/{uid} {
+    allow read: if isSignedIn() && request.auth.uid == uid;
+    allow update: if isSignedIn() && request.auth.uid == uid && !('role' in request.resource.data);
+    allow create: if isSignedIn() && request.auth.uid == uid;
+  }
+}
 }

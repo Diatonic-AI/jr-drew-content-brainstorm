@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 
+import { useActivityStore } from '@/stores/activityStore'
 import type { Workblock } from '@/types/workblocks'
 
-import { useActivityStore } from '@/stores/activityStore'
 
 export const useWorkblocks = () => {
   const { timelineBlocks } = useActivityStore()

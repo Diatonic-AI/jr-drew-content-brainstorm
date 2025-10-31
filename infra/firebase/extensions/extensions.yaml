@@ -1,0 +1,52 @@
+# Firebase Extensions Manifest
+# This file defines the extensions used in this project for local development and production
+
+# Uncomment and configure extensions as needed:
+
+# Delete User Data - Automatically delete user data when a user is deleted
+# firestore-delete-user-data:
+#   instance_id: delete-user-data
+#   params:
+#     FIRESTORE_COLLECTION: users
+#     FIRESTORE_USER_ID_FIELD: uid
+
+# Trigger Email - Send emails based on Firestore document changes
+# firestore-send-email:
+#   instance_id: send-email
+#   params:
+#     SMTP_CONNECTION_URI: ${param:SMTP_CONNECTION_URI}
+#     DEFAULT_FROM: ${param:DEFAULT_FROM}
+#     FIRESTORE_COLLECTION: mail
+
+# Storage Resize Images - Automatically resize images uploaded to Storage
+# storage-resize-images:
+#   instance_id: resize-images
+#   params:
+#     IMG_BUCKET: ${param:IMG_BUCKET}
+#     IMG_SIZES: 200x200,400x400,800x800
+
+# Algolia Search - Sync Firestore data to Algolia for full-text search
+# firestore-algolia-search:
+#   instance_id: algolia-search
+#   params:
+#     ALGOLIA_APP_ID: ${param:ALGOLIA_APP_ID}
+#     ALGOLIA_API_KEY: ${param:ALGOLIA_API_KEY}
+#     ALGOLIA_INDEX_NAME: ${param:ALGOLIA_INDEX_NAME}
+#     COLLECTION_PATH: projects/{projectId}/tasks
+
+# BigQuery Export - Export Firestore data to BigQuery for analytics
+# firestore-bigquery-export:
+#   instance_id: bigquery-export
+#   params:
+#     COLLECTION_PATH: activity
+#     DATASET_ID: ${param:DATASET_ID}
+#     TABLE_ID: ${param:TABLE_ID}
+
+# To install an extension:
+# 1. Uncomment the extension configuration above
+# 2. Set required parameters (use ${param:NAME} for secrets)
+# 3. Run: firebase ext:install --project=jrpm-dev
+# 4. Or import from production: firebase ext:export --project=jrpm-prod
+
+# To use extensions in emulators:
+# Extensions are automatically loaded when you run: firebase emulators:start

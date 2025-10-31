@@ -1,6 +1,6 @@
+import { CircularProgress } from '@/components/ui/Progress'
 import type { ScoreMetric } from '@/types/scores'
 
-import { CircularProgress } from '@/components/ui/Progress'
 
 export interface ScoresPanelProps {
   metrics: ScoreMetric[]

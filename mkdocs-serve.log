@@ -3,3 +3,5 @@ INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 INFO    -  Documentation built in 0.25 seconds
 INFO    -  [22:23:26] Serving on http://127.0.0.1:8001/
+WARNING -  [05:54:48] "GET /openapi.json HTTP/1.1" code 404
+WARNING -  [05:55:07] "GET /openapi.json HTTP/1.1" code 404

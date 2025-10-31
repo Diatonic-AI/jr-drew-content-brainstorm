@@ -1,6 +1,6 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { ScoreSnapshot } from '@/types/scores'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const AnalyticsService = {
   fetchScoreSnapshot(date: string): Promise<ScoreSnapshot> {

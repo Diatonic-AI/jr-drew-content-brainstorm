@@ -1,6 +1,6 @@
+import { mockApi } from '@/lib/api/mock-server'
 import type { Task } from '@/types/tasks'
 
-import { mockApi } from '@/lib/api/mock-server'
 
 export const TasksService = {
   list(): Promise<Task[]> {

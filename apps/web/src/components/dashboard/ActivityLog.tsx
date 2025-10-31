@@ -1,8 +1,8 @@
 import { format } from 'date-fns'
 
+import { Badge } from '@/components/ui/Badge'
 import type { ActivityLogEntry } from '@/types/activity'
 
-import { Badge } from '@/components/ui/Badge'
 
 export interface ActivityLogProps {
   entries: ActivityLogEntry[]

@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import type { CoachSuggestion } from '@/types/ai'
-
+import { Badge } from '@/components/ui/Badge'
 import {
   Modal,
   ModalContent,
@@ -11,7 +10,8 @@ import {
   ModalTitle,
   ModalClose,
 } from '@/components/ui/Modal'
-import { Badge } from '@/components/ui/Badge'
+import type { CoachSuggestion } from '@/types/ai'
+
 
 export interface ProductivityCoachModalProps {
   suggestion?: CoachSuggestion

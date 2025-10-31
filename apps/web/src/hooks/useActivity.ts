@@ -1,6 +1,10 @@
-import { useCallback, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useCallback, useEffect } from 'react'
 
+
+import { TrackingService } from '@/services/tracking.service'
+import { useActivityStore } from '@/stores/activityStore'
+import { useTrackingStore } from '@/stores/trackingStore'
 import type {
   ActivityAnomaly,
   ActivityDaySummary,
@@ -8,10 +12,6 @@ import type {
   ActivityFilterOptions,
   ActivityTimelineBlock,
 } from '@/types/activity'
-
-import { useActivityStore } from '@/stores/activityStore'
-import { TrackingService } from '@/services/tracking.service'
-import { useTrackingStore } from '@/stores/trackingStore'
 
 export const buildSummary = (
   events: ActivityEvent[],

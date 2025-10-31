@@ -2,8 +2,8 @@ import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Input } from '
 
 export function SharedComponentsDemo() {
   return (
-    <div className="container mx-auto p-8 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-8">Vite App - Shared Components Demo</h1>
+    <div className="container mx-auto max-w-4xl p-8">
+      <h1 className="mb-8 text-4xl font-bold">Vite App - Shared Components Demo</h1>
 
       <div className="space-y-6">
         {/* Buttons Demo */}
@@ -59,7 +59,7 @@ export function SharedComponentsDemo() {
         </Card>
 
         {/* Card Demo */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[1, 2, 3].map((i) => (
             <Card key={i}>
               <CardHeader>

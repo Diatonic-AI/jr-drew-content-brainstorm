@@ -1,5 +1,5 @@
-import { Navigate, useRoutes } from 'react-router-dom'
 import { Suspense } from 'react'
+import { Navigate, useRoutes } from 'react-router-dom'
 
 import { adminRoutes, developerRoutes, protectedRoutes, publicRoutes } from '@/routes'
 

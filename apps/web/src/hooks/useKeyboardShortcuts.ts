@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react'
 
+import { useSettingsStore } from '@/stores/settingsStore'
 import type { KeyboardShortcut } from '@/types/settings'
 
-import { useSettingsStore } from '@/stores/settingsStore'
 
 const normalizeCombination = (event: KeyboardEvent) => {
   const parts: string[] = []

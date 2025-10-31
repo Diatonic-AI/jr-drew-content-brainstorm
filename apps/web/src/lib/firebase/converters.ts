@@ -1,6 +1,6 @@
 import type { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, SnapshotOptions } from 'firebase/firestore';
 import { Timestamp } from 'firebase/firestore';
-import { z } from 'zod';
+import { type z } from 'zod';
 
 const normalizeTimestamps = (data: Record<string, unknown>) => {
   const result: Record<string, unknown> = {};

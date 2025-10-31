@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 import { DocumentMeta, FirestoreDoc, OptionalTimestampMs, UID } from './shared';
 
 export const UserRoles = z.enum(['owner', 'admin', 'member', 'viewer']);

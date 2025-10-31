@@ -1,9 +1,9 @@
-import { useCallback } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useCallback } from 'react'
 
 import { showToast } from '@/components/ui/Toast'
-import { useNotificationStore } from '@/stores/notificationStore'
 import { NotificationsService } from '@/services/notifications.service'
+import { useNotificationStore } from '@/stores/notificationStore'
 
 export const useNotifications = () => {
   const { notifications, push, markAsRead, dismiss, clear, setAll } = useNotificationStore()

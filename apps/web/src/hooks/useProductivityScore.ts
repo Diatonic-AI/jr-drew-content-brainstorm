@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 
-import type { ScoreMetric } from '@/types/scores'
 
 import { useActivityStore } from '@/stores/activityStore'
 import { useBreaksStore } from '@/stores/breaksStore'
+import type { ScoreMetric } from '@/types/scores'
 
 export const useProductivityScore = () => {
   const { daySummary } = useActivityStore()

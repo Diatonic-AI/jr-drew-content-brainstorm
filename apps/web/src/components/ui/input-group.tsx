@@ -1,10 +1,10 @@
-import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { cn } from "@/lib/utils"
 
 function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -35,7 +35,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 const inputGroupAddonVariants = cva(
-  "text-muted-foreground flex h-auto cursor-text select-none items-center justify-center gap-2 py-1.5 text-sm font-medium group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4",
+  "flex h-auto cursor-text select-none items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4",
   {
     variants: {
       align: {

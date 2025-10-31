@@ -1,6 +1,6 @@
+import { Badge } from '@/components/ui/Badge'
 import type { AIInsight } from '@/types/ai'
 
-import { Badge } from '@/components/ui/Badge'
 
 const priorityToVariant: Record<
   AIInsight['priority'],

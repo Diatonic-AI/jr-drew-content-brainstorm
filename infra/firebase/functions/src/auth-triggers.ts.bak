@@ -1,0 +1,230 @@
+import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
+
+// Initialize admin if not already initialized
+if (!admin.apps.length) {
+  admin.initializeApp();
+}
+
+const db = admin.firestore();
+const auth = admin.auth();
+
+/**
+ * On user creation, set initial custom claims and create user document
+ */
+export const onUserCreate = functions.auth.user().onCreate(async (user) => {
+  const uid = user.uid;
+  const email = user.email;
+
+  try {
+    // Wait a moment for Firestore document to be created by client
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Get user document to find their org
+    const userDoc = await db.collection('users').doc(uid).get();
+    
+    if (!userDoc.exists) {
+      console.warn(`User document not found for ${uid}, will retry`);
+      return;
+    }
+
+    const userData = userDoc.data();
+    const currentOrgId = userData?.currentOrgId;
+
+    if (!currentOrgId) {
+      console.warn(`No org found for user ${uid}`);
+      return;
+    }
+
+    // Get org membership to determine role
+    const memberDoc = await db
+      .collection('orgs')
+      .doc(currentOrgId)
+      .collection('members')
+      .doc(uid)
+      .get();
+
+    const role = memberDoc.exists ? memberDoc.data()?.role : 'member';
+
+    // Set custom claims
+    const customClaims = {
+      role,
+      orgId: currentOrgId,
+      emailVerified: user.emailVerified || false,
+      createdAt: Date.now()
+    };
+
+    await auth.setCustomUserClaims(uid, customClaims);
+
+    // Update user document with claims
+    await db.collection('users').doc(uid).update({
+      customClaims,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    console.log(`Custom claims set for user ${uid}:`, customClaims);
+  } catch (error) {
+    console.error(`Error setting custom claims for user ${uid}:`, error);
+    throw error;
+  }
+});
+
+/**
+ * On user deletion, clean up their data
+ */
+export const onUserDelete = functions.auth.user().onDelete(async (user) => {
+  const uid = user.uid;
+
+  try {
+    // Get user's org membership
+    const userDoc = await db.collection('users').doc(uid).get();
+    
+    if (userDoc.exists) {
+      const userData = userDoc.data();
+      const orgId = userData?.currentOrgId;
+
+      // Remove from org members
+      if (orgId) {
+        await db
+          .collection('orgs')
+          .doc(orgId)
+          .collection('members')
+          .doc(uid)
+          .delete();
+      }
+
+      // Delete user document
+      await db.collection('users').doc(uid).delete();
+    }
+
+    console.log(`Cleaned up data for deleted user ${uid}`);
+  } catch (error) {
+    console.error(`Error cleaning up user ${uid}:`, error);
+  }
+});
+
+/**
+ * Callable function to update user custom claims
+ * Can be called when user role changes or switches orgs
+ */
+export const updateUserClaims = functions.https.onCall(async (data, context) => {
+  // Check if user is authenticated
+  if (!context.auth) {
+    throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
+  }
+
+  const { userId, role, orgId } = data;
+  const callerId = context.auth.uid;
+
+  // Verify caller has permission (must be admin or owner)
+  const callerClaims = context.auth.token;
+  if (!['admin', 'owner'].includes(callerClaims.role || '')) {
+    throw new functions.https.HttpsError(
+      'permission-denied',
+      'Only admins and owners can update user claims'
+    );
+  }
+
+  try {
+    // Get current user data
+    const userDoc = await db.collection('users').doc(userId).get();
+    
+    if (!userDoc.exists) {
+      throw new functions.https.HttpsError('not-found', 'User not found');
+    }
+
+    // Verify caller is in same org or is updating their own claims
+    if (callerId !== userId && callerClaims.orgId !== orgId) {
+      throw new functions.https.HttpsError(
+        'permission-denied',
+        'Cannot update claims for users in different organizations'
+      );
+    }
+
+    // Update custom claims
+    const customClaims = {
+      role: role || callerClaims.role,
+      orgId: orgId || callerClaims.orgId,
+      emailVerified: context.auth.token.email_verified || false,
+      updatedAt: Date.now()
+    };
+
+    await auth.setCustomUserClaims(userId, customClaims);
+
+    // Update user document
+    await db.collection('users').doc(userId).update({
+      customClaims,
+      role: customClaims.role,
+      currentOrgId: customClaims.orgId,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    console.log(`Updated custom claims for user ${userId}:`, customClaims);
+
+    return { success: true, claims: customClaims };
+  } catch (error) {
+    console.error(`Error updating claims for user ${userId}:`, error);
+    throw new functions.https.HttpsError('internal', 'Failed to update user claims');
+  }
+});
+
+/**
+ * Callable function to refresh user's custom claims
+ * Useful after role changes in Firestore
+ */
+export const refreshUserClaims = functions.https.onCall(async (data, context) => {
+  if (!context.auth) {
+    throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
+  }
+
+  const uid = context.auth.uid;
+
+  try {
+    // Get latest user data
+    const userDoc = await db.collection('users').doc(uid).get();
+    
+    if (!userDoc.exists) {
+      throw new functions.https.HttpsError('not-found', 'User not found');
+    }
+
+    const userData = userDoc.data();
+    const orgId = userData?.currentOrgId;
+
+    if (!orgId) {
+      throw new functions.https.HttpsError('failed-precondition', 'User has no organization');
+    }
+
+    // Get current role from org membership
+    const memberDoc = await db
+      .collection('orgs')
+      .doc(orgId)
+      .collection('members')
+      .doc(uid)
+      .get();
+
+    const role = memberDoc.exists ? memberDoc.data()?.role : 'member';
+
+    // Update custom claims
+    const customClaims = {
+      role,
+      orgId,
+      emailVerified: context.auth.token.email_verified || false,
+      updatedAt: Date.now()
+    };
+
+    await auth.setCustomUserClaims(uid, customClaims);
+
+    // Update user document
+    await db.collection('users').doc(uid).update({
+      customClaims,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    console.log(`Refreshed custom claims for user ${uid}`);
+
+    return { success: true, claims: customClaims };
+  } catch (error) {
+    console.error(`Error refreshing claims for user ${uid}:`, error);
+    throw new functions.https.HttpsError('internal', 'Failed to refresh user claims');
+  }
+});

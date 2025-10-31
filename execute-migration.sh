@@ -7,12 +7,12 @@ cd /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm
 echo "🎯 Starting Migration: web-next Next.js → Vite + Production Stack"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-# Execute with codex CLI
-codex cli << 'CODEX_PROMPT'
+# Create prompt file
+cat > /tmp/migration-prompt.txt << 'CODEX_PROMPT'
 You are executing a complete migration following the specification in MIGRATE_WEBNEXT_TO_PRODUCTION.md
 
 **Your mission:**
-1. Archive unused directories (rize-frontend-analysis, rize-turbo) to /archive/ with timestamps
+1. Archive unused directories (rize-frontend-analysis, if present, and rize-turbo, if present) to /archive/ with timestamps
 2. Convert /apps/web-next from Next.js to Vite matching /apps/web stack exactly
 3. Migrate all components from Next.js patterns to React Router + Vite
 4. Update Firebase configuration to point to /backend
@@ -38,6 +38,9 @@ You are executing a complete migration following the specification in MIGRATE_WE
 
 Read MIGRATE_WEBNEXT_TO_PRODUCTION.md for full specifications and execute the complete migration now.
 CODEX_PROMPT
+
+# Execute with codex CLI using prompt file
+codex "$(cat /tmp/migration-prompt.txt)"
 
 echo ""
 echo "✅ Migration execution complete!"

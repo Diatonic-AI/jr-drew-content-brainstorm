@@ -1,8 +1,3 @@
-import { useMemo } from 'react'
-import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
-import { formatDistanceToNow } from 'date-fns'
-import { Activity, Play, StopCircle } from 'lucide-react'
-
 import {
   Badge,
   Button,
@@ -17,6 +12,10 @@ import {
   TableHeader,
   TableRow
 } from '@diatonic/ui'
+import { type ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
+import { formatDistanceToNow } from 'date-fns'
+import { Activity, Play, StopCircle } from 'lucide-react'
+import { useMemo } from 'react'
 
 import { useEntitiesStore, type SessionSummary } from '../stores/entities'
 import { useTimerStore } from '../stores/timer'
