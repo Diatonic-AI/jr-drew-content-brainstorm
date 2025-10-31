@@ -11,7 +11,7 @@
     "bootstrap": "pnpm -C apps/web install && pnpm -C apps/electron install && pnpm -C infra/firebase/functions install",
     "dev:web": "pnpm -C apps/web dev",
     "dev:electron": "pnpm -C apps/electron dev",
-    "dev:emulators": "firebase emulators:start --project jrpm-dev --config infra/firebase/firebase.json",
+  "dev:emulators": "bash scripts/emulators.sh",
     "dev:emulators:core": "firebase emulators:start --project jrpm-dev --config infra/firebase/firebase.json --only auth,firestore,functions,hosting,storage",
     "deploy:web": "firebase deploy --project jrpm-dev --only hosting --config infra/firebase/firebase.json",
     "deploy:functions": "firebase deploy --project jrpm-dev --only functions --config infra/firebase/firebase.json",
