@@ -56,3 +56,6 @@ htmlcov/
 
 # Python cache directories
 .cache/
+
+# Python pip packages directory
+.pip_packages/
