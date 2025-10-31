@@ -32,3 +32,24 @@ Thumbs.db
 .npm/
 rize-turbo/
 apps/web-next/.next/
+
+# Python local packages (should never be committed)
+.local/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# More Python cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
