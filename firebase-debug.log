@@ -1,0 +1,675 @@
+[debug] [2025-10-29T13:43:46.317Z] ----------------------------------------------------------------------
+[debug] [2025-10-29T13:43:46.319Z] Command:       /home/daclab-ai/.nvm/versions/node/v22.20.0/bin/node /home/daclab-ai/.nvm/versions/node/v22.20.0/bin/firebase emulators:start --project jrpm-dev --config infra/firebase/firebase.json --only auth,firestore,functions,hosting,storage
+[debug] [2025-10-29T13:43:46.319Z] CLI Version:   14.22.0
+[debug] [2025-10-29T13:43:46.319Z] Platform:      linux
+[debug] [2025-10-29T13:43:46.319Z] Node Version:  v22.20.0
+[debug] [2025-10-29T13:43:46.320Z] Time:          Wed Oct 29 2025 08:43:46 GMT-0500 (Central Daylight Time)
+[debug] [2025-10-29T13:43:46.320Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-10-29T13:43:46.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-29T13:43:46.518Z] > authorizing via signed-in user (drew@dacvisuals.com)
+[debug] [2025-10-29T13:43:46.557Z] openjdk version "17.0.16" 2025-07-15
+OpenJDK Runtime Environment (build 17.0.16+8-Ubuntu-0ubuntu124.04.1)
+
+[debug] [2025-10-29T13:43:46.557Z] OpenJDK 64-Bit Server VM (build 17.0.16+8-Ubuntu-0ubuntu124.04.1, mixed mode, sharing)
+
+[debug] [2025-10-29T13:43:46.565Z] Parsed Java major version: 17
+[warn] ⬢  emulators: firebase-tools will drop support for Java version < 21 soon in firebase-tools@15. Please install a JDK at version 21 or above to get a compatible runtime. 
+[info] i  emulators: Starting emulators: auth, functions, firestore, hosting, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, hosting, storage"}}
+[debug] [2025-10-29T13:43:46.570Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.570Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.570Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.570Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.570Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.570Z] [storage] Storage Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.570Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4001},{"address":"::1","family":"IPv6","port":4001}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9105}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":9181}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5013}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9210}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-10-29T13:43:46.574Z] Emulator locator file path: /tmp/hub-jrpm-dev.json
+[debug] [2025-10-29T13:43:46.574Z] [hub] writing locator at /tmp/hub-jrpm-dev.json
+[debug] [2025-10-29T13:43:46.577Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.577Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.577Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-10-29T13:43:46.577Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4001},{"address":"::1","family":"IPv6","port":4001}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9105}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":9181}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5013}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9210}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5011}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, database, pubsub, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, database, pubsub, dataconnect"}}
+[warn] ⚠  functions: Application Default Credentials detected. Non-emulated services will access production using these credentials. Be careful! {"metadata":{"emulator":{"name":"functions"},"message":"Application Default Credentials detected. Non-emulated services will access production using these credentials. Be careful!"}}
+[debug] [2025-10-29T13:43:47.143Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:47.143Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:47.144Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig [none]
+[debug] [2025-10-29T13:43:47.440Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig 403
+[debug] [2025-10-29T13:43:47.440Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-10-29T13:43:47.441Z] Failed to get Admin SDK config for jrpm-dev, falling back to cache Failed to get Admin SDK for Firebase project jrpm-dev. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project jrpm-dev. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig had HTTP Error: 403, The caller does not have permission","status":403},"status":500}
+[warn] ⚠  functions: Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect. {"metadata":{"emulator":{"name":"functions"},"message":"Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect."}}
+[debug] [2025-10-29T13:43:47.451Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-10-29T13:43:47.451Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-10-29T13:43:47.451Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/daclab-ai/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",9181,"--websocket_port",9150,"--project_id","jrpm-dev","--rules","/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5011"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":9181} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/daclab-ai/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",9181,\"--websocket_port\",9150,\"--project_id\",\"jrpm-dev\",\"--rules\",\"/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5011\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":9181}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to firestore-debug.log"}}
+[debug] [2025-10-29T13:43:48.337Z] Oct 29, 2025 8:43:48 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 8:43:48 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2025-10-29T13:43:48.379Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2025-10-29T13:43:48.380Z] 127.0.0.1:9181
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:9181
+
+If you are running a Firestore in Datastore Mode project, run:
+
+   export DATASTORE_EMULATOR_HOST=127.0.0.1:9181
+
+Note: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"127.0.0.1:9181\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:9181\n\nIf you are running a Firestore in Datastore Mode project, run:\n\n   export DATASTORE_EMULATOR_HOST=127.0.0.1:9181\n\nNote: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-10-29T13:43:53.770Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-10-29T13:43:54.340Z] Temp file directory for storage emulator: /tmp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /tmp/firebase/storage/blobs"}}
+[debug] [2025-10-29T13:43:54.343Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:54.344Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:54.344Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jrpm-dev/sites 
+[debug] [2025-10-29T13:43:54.516Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/jrpm-dev/sites 404
+[debug] [2025-10-29T13:43:54.516Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/jrpm-dev/sites {"error":{"code":404,"message":"project `jrpm-dev` doesn't exist","status":"NOT_FOUND"}}
+[debug] [2025-10-29T13:43:54.516Z] Failed to list hosting sites
+[debug] Request to https://firebasehosting.googleapis.com/v1beta1/projects/jrpm-dev/sites had HTTP Error: 404, project `jrpm-dev` doesn't exist
+[debug] [2025-10-29T13:43:54.516Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:54.516Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:54.516Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/webApps/-/config [none]
+[debug] [2025-10-29T13:43:55.511Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/webApps/-/config 403
+[debug] [2025-10-29T13:43:55.511Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/webApps/-/config {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-10-29T13:43:55.511Z] fetchWebSetup error: FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/webApps/-/config had HTTP Error: 403, The caller does not have permission
+[warn] ⚠  hosting: Authentication error when trying to fetch your current web app configuration, have you run firebase login? 
+[warn] ⚠  hosting: Could not fetch web app configuration and there is no cached configuration on this machine. Check your internet connection and make sure you are authenticated. To continue, you must call firebase.initializeApp({...}) in your code before using Firebase. 
+[debug] [2025-10-29T13:43:55.512Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:55.512Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:43:55.513Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev [none]
+[debug] [2025-10-29T13:43:55.790Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev 403
+[debug] [2025-10-29T13:43:55.790Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-10-29T13:43:55.790Z] Request to https://firebase.googleapis.com/v1beta1/projects/jrpm-dev had HTTP Error: 403, The caller does not have permission
+[info] i  hosting[jrpm-dev]: Serving hosting files from: ../../apps/web/dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: ../../apps/web/dist"}}
+[info] ✔  hosting[jrpm-dev]: Local server: http://127.0.0.1:5013 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: http://127.0.0.1:5013"}}
+[info] i  functions: Watching "/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions\" for Cloud Functions..."}}
+[debug] [2025-10-29T13:43:55.803Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T13:43:56.183Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T13:43:56.183Z] Building nodejs source
+[debug] [2025-10-29T13:43:56.183Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T13:43:56.185Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T13:43:56.205Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8404
+
+[debug] [2025-10-29T13:43:56.573Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[info] ✔  functions[us-central1-httpExportProject]: http function initialized (http://127.0.0.1:5011/jrpm-dev/us-central1/httpExportProject). {"metadata":{"emulator":{"name":"functions"},"message":"http function initialized (http://127.0.0.1:5011/jrpm-dev/us-central1/httpExportProject)."}}
+[info] ✔  functions[us-central1-httpImportProject]: http function initialized (http://127.0.0.1:5011/jrpm-dev/us-central1/httpImportProject). {"metadata":{"emulator":{"name":"functions"},"message":"http function initialized (http://127.0.0.1:5011/jrpm-dev/us-central1/httpImportProject)."}}
+[debug] [2025-10-29T13:44:00.602Z] Found a v2 firestore trigger.
+[debug] [2025-10-29T13:44:00.603Z] addFirestoreTrigger "{\"eventType\":\"google.cloud.firestore.document.v1.written\",\"database\":\"(default)\",\"namespace\":\"(default)\",\"document\":{\"value\":\"orgs/{orgId}/projects/{projectId}/tasks/{taskId}\",\"matchType\":\"PATH_PATTERN\"}}"
+[debug] [2025-10-29T13:44:00.603Z] >>> [apiv2][query] POST http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev/eventarcTrigger?eventarcTriggerId=us-central1-onTaskWrite-0 [none]
+[debug] [2025-10-29T13:44:00.603Z] >>> [apiv2][body] POST http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev/eventarcTrigger?eventarcTriggerId=us-central1-onTaskWrite-0 "{\"eventType\":\"google.cloud.firestore.document.v1.written\",\"database\":\"(default)\",\"namespace\":\"(default)\",\"document\":{\"value\":\"orgs/{orgId}/projects/{projectId}/tasks/{taskId}\",\"matchType\":\"PATH_PATTERN\"}}"
+[debug] [2025-10-29T13:44:00.610Z] Oct 29, 2025 8:44:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 8:44:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-10-29T13:44:00.726Z] Oct 29, 2025 8:44:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 8:44:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-10-29T13:44:01.177Z] <<< [apiv2][status] POST http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev/eventarcTrigger?eventarcTriggerId=us-central1-onTaskWrite-0 200
+[debug] [2025-10-29T13:44:01.177Z] <<< [apiv2][body] POST http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev/eventarcTrigger?eventarcTriggerId=us-central1-onTaskWrite-0 {"eventType":"google.cloud.firestore.document.v1.written","database":"(default)","namespace":"(default)","document":{"value":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}","matchType":"PATH_PATTERN"}}
+[info] ✔  functions[us-central1-onTaskWrite]: firestore function initialized. {"metadata":{"emulator":{"name":"functions"},"message":"firestore function initialized."}}
+[info] i  functions[us-central1-scheduleDueSoon]: function ignored because the pubsub emulator does not exist or is not running. {"metadata":{"emulator":{"name":"functions"},"message":"function ignored because the pubsub emulator does not exist or is not running."}}
+[debug] [2025-10-29T13:44:01.180Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4001/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9105 │ http://127.0.0.1:4001/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5011 │ http://127.0.0.1:4001/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:9181 │ http://127.0.0.1:4001/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5013 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Storage        │ 127.0.0.1:9210 │ http://127.0.0.1:4001/storage   │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[warn] ⚠  emulators: firebase-tools will drop support for Java version < 21 soon in firebase-tools@15. Please install a JDK at version 21 or above to get a compatible runtime. 
+[debug] [2025-10-29T13:44:52.111Z] Oct 29, 2025 8:44:52 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 8:44:52 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-10-29T13:44:58.263Z] Oct 29, 2025 8:44:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 8:44:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-10-29T13:44:59.835Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:44:59.835Z] Checked if tokens are valid: true, expires at: 1761748207035
+[debug] [2025-10-29T13:44:59.836Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig [none]
+[debug] [2025-10-29T13:45:00.245Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig 403
+[debug] [2025-10-29T13:45:00.245Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-10-29T13:45:00.245Z] Failed to get Admin SDK config for jrpm-dev, falling back to cache Failed to get Admin SDK for Firebase project jrpm-dev. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project jrpm-dev. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://firebase.googleapis.com/v1beta1/projects/jrpm-dev/adminSdkConfig had HTTP Error: 403, The caller does not have permission","status":403},"status":500}
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2025-10-29T20:10:07.683Z] >>> [apiv2][query] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules [none]
+[debug] [2025-10-29T20:10:07.683Z] >>> [apiv2][body] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    function isSignedIn() { return request.auth != null; }\n    function membershipDoc(orgId) {\n      return get(/databases/$(database)/documents/orgs/$(orgId)/members/$(request.auth.uid));\n    }\n    function orgMember(orgId) { return membershipDoc(orgId).exists(); }\n    function hasRole(orgId, roles) {\n      return orgMember(orgId) && membershipDoc(orgId).data.role in roles;\n    }\n    function isOwner(orgId) { return hasRole(orgId, ['owner']); }\n    function isAdmin(orgId) { return hasRole(orgId, ['owner','admin']); }\n    function isContributor(orgId) { return hasRole(orgId, ['owner','admin','member']); }\n\n    // Org root document\n    match /orgs/{orgId} {\n      allow read: if isSignedIn() && orgMember(orgId);\n      allow update: if isAdmin(orgId); // restrict sensitive updates\n      allow delete: if isOwner(orgId);\n      allow create: if isSignedIn(); // creating an org provisions membership via backend\n\n      // Members subcollection\n      match /members/{uid} {\n        allow read: if isAdmin(orgId) || request.auth.uid == uid;\n        allow create: if isOwner(orgId);\n        allow update: if isOwner(orgId) || (request.auth.uid == uid && !(\"role\" in request.resource.data));\n        allow delete: if isOwner(orgId);\n      }\n\n      // Projects subcollection\n      match /projects/{projectId} {\n        allow read: if orgMember(orgId);\n        allow create: if isContributor(orgId);\n        allow update: if isContributor(orgId);\n        allow delete: if isAdmin(orgId);\n\n        // Tasks subcollection\n        match /tasks/{taskId} {\n          allow read: if orgMember(orgId);\n          allow create: if isContributor(orgId);\n          allow update: if isContributor(orgId);\n          allow delete: if isAdmin(orgId);\n        }\n\n        // Columns\n        match /columns/{columnId} {\n          allow read: if orgMember(orgId);\n          allow create, update: if isContributor(orgId);\n          allow delete: if isAdmin(orgId);\n        }\n\n        // Sprints\n        match /sprints/{sprintId} {\n          allow read: if orgMember(orgId);\n          allow create, update: if isContributor(orgId);\n          allow delete: if isAdmin(orgId);\n        }\n      }\n    }\n\n    // Users documents - self only\n    match /users/{uid} {\n      allow read: if isSignedIn() && request.auth.uid == uid;\n      allow update: if isSignedIn() && request.auth.uid == uid && !('role' in request.resource.data);\n      allow create: if isSignedIn() && request.auth.uid == uid;\n    }\n  }\n}"}]}}
+[debug] [2025-10-29T20:10:07.689Z] Oct 29, 2025 3:10:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 3:10:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-10-29T20:10:07.703Z] Oct 29, 2025 3:10:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 3:10:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-10-29T20:10:07.898Z] <<< [apiv2][status] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules 200
+[debug] [2025-10-29T20:10:07.898Z] <<< [apiv2][body] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules {"issues":[{"sourcePosition":{"fileName":"security.rules","line":8,"column":61,"currentOffset":344,"endOffset":349},"description":"Invalid function name: exists.","severity":"WARNING"}]}
+[warn] ⚠  infra/firebase/firestore.rules:8:61 - WARNING Invalid function name: exists. 
+[info] ✔  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2025-10-29T20:10:10.718Z] >>> [apiv2][query] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules [none]
+[debug] [2025-10-29T20:10:10.718Z] >>> [apiv2][body] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    function isSignedIn() { return request.auth != null; }\n    function membershipDoc(orgId) {\n      return get(/databases/$(database)/documents/orgs/$(orgId)/members/$(request.auth.uid));\n    }\n    function orgMember(orgId) { return membershipDoc(orgId).exists(); }\n    function hasRole(orgId, roles) {\n      return orgMember(orgId) && membershipDoc(orgId).data.role in roles;\n    }\n    function isOwner(orgId) { return hasRole(orgId, ['owner']); }\n    function isAdmin(orgId) { return hasRole(orgId, ['owner','admin']); }\n    function isContributor(orgId) { return hasRole(orgId, ['owner','admin','member']); }\n\n    // Org root document\n    match /orgs/{orgId} {\n      allow read: if isSignedIn() && orgMember(orgId);\n      allow update: if isAdmin(orgId); // restrict sensitive updates\n      allow delete: if isOwner(orgId);\n      allow create: if isSignedIn(); // creating an org provisions membership via backend\n\n      // Members subcollection\n      match /members/{uid} {\n        allow read: if isAdmin(orgId) || request.auth.uid == uid;\n        allow create: if isOwner(orgId);\n        allow update: if isOwner(orgId) || (request.auth.uid == uid && !(\"role\" in request.resource.data));\n        allow delete: if isOwner(orgId);\n      }\n\n      // Projects subcollection\n      match /projects/{projectId} {\n        allow read: if orgMember(orgId);\n        allow create: if isContributor(orgId);\n        allow update: if isContributor(orgId);\n        allow delete: if isAdmin(orgId);\n\n        // Tasks subcollection\n        match /tasks/{taskId} {\n          allow read: if orgMember(orgId);\n          allow create: if isContributor(orgId);\n          allow update: if isContributor(orgId);\n          allow delete: if isAdmin(orgId);\n        }\n\n        // Columns\n        match /columns/{columnId} {\n          allow read: if orgMember(orgId);\n          allow create, update: if isContributor(orgId);\n          allow delete: if isAdmin(orgId);\n        }\n\n        // Sprints\n        match /sprints/{sprintId} {\n          allow read: if orgMember(orgId);\n          allow create, update: if isContributor(orgId);\n          allow delete: if isAdmin(orgId);\n        }\n      }\n    }\n\n    // Users documents - self only\n    match /users/{uid} {\n      allow read: if isSignedIn() && request.auth.uid == uid;\n      allow update: if isSignedIn() && request.auth.uid == uid && !('role' in request.resource.data);\n      allow create: if isSignedIn() && request.auth.uid == uid;\n    }\n  }\n}"}]}}
+[debug] [2025-10-29T20:10:10.804Z] <<< [apiv2][status] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules 200
+[debug] [2025-10-29T20:10:10.804Z] <<< [apiv2][body] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules {"issues":[{"sourcePosition":{"fileName":"security.rules","line":8,"column":61,"currentOffset":344,"endOffset":349},"description":"Invalid function name: exists.","severity":"WARNING"}]}
+[warn] ⚠  infra/firebase/firestore.rules:8:61 - WARNING Invalid function name: exists. 
+[info] ✔  firestore: Rules updated. 
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[debug] [2025-10-29T20:10:31.276Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:10:32.277Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:10:32.693Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:10:32.693Z] Building nodejs source
+[debug] [2025-10-29T20:10:32.693Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:10:32.694Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:10:32.696Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8382
+
+[debug] [2025-10-29T20:10:33.192Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[debug] [2025-10-29T20:10:34.300Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:10:35.301Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:10:35.637Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:10:35.637Z] Building nodejs source
+[debug] [2025-10-29T20:10:35.637Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:10:35.638Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:10:35.639Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8055
+
+[debug] [2025-10-29T20:10:36.021Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:10:38.338Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/tasks.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/tasks.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:10:39.339Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:10:39.709Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:10:39.709Z] Building nodejs source
+[debug] [2025-10-29T20:10:39.709Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:10:39.710Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:10:39.711Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8547
+
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:10:40.086Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:10:44.392Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/scheduler.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/scheduler.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:10:45.392Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:10:45.759Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:10:45.759Z] Building nodejs source
+[debug] [2025-10-29T20:10:45.759Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:10:45.760Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:10:45.761Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8025
+
+[debug] [2025-10-29T20:10:46.140Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[debug] [2025-10-29T20:10:49.480Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-export.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-export.ts changed, reloading triggers"}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:10:50.481Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:10:50.960Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:10:50.960Z] Building nodejs source
+[debug] [2025-10-29T20:10:50.960Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:10:50.960Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:10:50.962Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8545
+
+[debug] [2025-10-29T20:10:51.350Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[debug] [2025-10-29T20:10:55.179Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-import.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-import.ts changed, reloading triggers"}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:10:56.180Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:10:56.554Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:10:56.554Z] Building nodejs source
+[debug] [2025-10-29T20:10:56.554Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:10:56.554Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:10:56.556Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8825
+
+[debug] [2025-10-29T20:10:56.947Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:12:00.085Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/tasks.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/tasks.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:12:00.086Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/scheduler.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/scheduler.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:12:00.086Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-export.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-export.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:12:00.086Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-import.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/modules/project-import.ts changed, reloading triggers"}}
+[debug] [2025-10-29T20:12:01.086Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T20:12:01.496Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T20:12:01.496Z] Building nodejs source
+[debug] [2025-10-29T20:12:01.496Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T20:12:01.497Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T20:12:01.498Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8597
+
+[debug] [2025-10-29T20:12:01.903Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T20:33:02.833Z] Oct 29, 2025 3:33:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 3:33:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-10-29T23:14:22.859Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2025-10-29T23:14:22.864Z] >>> [apiv2][query] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules [none]
+[debug] [2025-10-29T23:14:22.864Z] >>> [apiv2][body] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    function isSignedIn() { return request.auth != null; }\n    function orgMember(orgId) {\n      return exists(/databases/$(database)/documents/orgs/$(orgId)/members/$(request.auth.uid));\n    }\n    match /orgs/{orgId} {\n      allow read: if isSignedIn() && orgMember(orgId);\n      allow write: if isSignedIn() && orgMember(orgId);\n      match /{document=**} {\n        allow read, write: if isSignedIn() && orgMember(orgId);\n      }\n    }\n    match /users/{uid} {\n      allow read, write: if isSignedIn() && request.auth.uid == uid;\n    }\n  }\n}"}]}}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[debug] [2025-10-29T23:14:22.869Z] Oct 29, 2025 6:14:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 6:14:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-10-29T23:14:22.882Z] Oct 29, 2025 6:14:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2025 6:14:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-10-29T23:14:22.906Z] <<< [apiv2][status] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules 200
+[debug] [2025-10-29T23:14:22.906Z] <<< [apiv2][body] PUT http://127.0.0.1:9181/emulator/v1/projects/jrpm-dev:securityRules {}
+[info] ✔  firestore: Rules updated. 
+[debug] [2025-10-29T23:14:23.860Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T23:14:24.337Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T23:14:24.337Z] Building nodejs source
+[debug] [2025-10-29T23:14:24.337Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T23:14:24.338Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T23:14:24.339Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8213
+
+[debug] [2025-10-29T23:14:24.749Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T23:14:29.790Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-10-29T23:14:30.791Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T23:14:31.249Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T23:14:31.249Z] Building nodejs source
+[debug] [2025-10-29T23:14:31.249Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T23:14:31.250Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T23:14:31.251Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8747
+
+[debug] [2025-10-29T23:14:31.667Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T23:14:45.092Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-10-29T23:14:45.609Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-10-29T23:14:46.610Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T23:14:47.034Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T23:14:47.034Z] Building nodejs source
+[debug] [2025-10-29T23:14:47.034Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T23:14:47.036Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T23:14:47.037Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8892
+
+[debug] [2025-10-29T23:14:47.477Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
+[debug] [2025-10-29T23:15:42.508Z] File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-10-29T23:15:43.509Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-10-29T23:15:43.985Z] > [functions] package.json contents: {
+  "name": "@jrpm/functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "dev": "ts-node --swc src/index.ts"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
+[debug] [2025-10-29T23:15:43.986Z] Building nodejs source
+[debug] [2025-10-29T23:15:43.986Z] Failed to find version of module node: reached end of search path /home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2025-10-29T23:15:43.986Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-29T23:15:43.987Z] Found firebase-functions binary at '/home/daclab-ai/Documents/JR-Drew-Content-Brainstorm/infra/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8826
+
+[debug] [2025-10-29T23:15:44.387Z] Got response from /__/functions.yaml {"endpoints":{"httpExportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpExportProject"},"httpImportProject":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"httpImportProject"},"onTaskWrite":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.written","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"orgs/{orgId}/projects/{projectId}/tasks/{taskId}"},"retry":false},"entryPoint":"onTaskWrite"},"scheduleDueSoon":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"scheduleTrigger":{"schedule":"every 60 minutes","retryConfig":{},"timeZone":"Etc/UTC"},"entryPoint":"scheduleDueSoon"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: httpExportProject, httpImportProject, onTaskWrite, scheduleDueSoon."}}
