@@ -63,7 +63,6 @@ htmlcov/
 # Project-specific directories (not tracked)
 /archive/
 /audits/
-/docs/
 /reports/
 /src/
 /tools/
