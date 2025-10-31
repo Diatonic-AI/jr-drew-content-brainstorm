@@ -12,6 +12,14 @@ coverage
 # Exclusions for repo cleanliness
 .obsidian/
 $codex/
+.codex/
+.backup/
+logs/
+*.pid
+*.log
+reports/*.json
+infra/firebase/functions/lib/
+$codex/
 site/
 .venv/
 __pycache__/
@@ -21,3 +29,27 @@ Thumbs.db
 
 # Python cache
 *.pyc
+.npm/
+rize-turbo/
+apps/web-next/.next/
+
+# Python local packages (should never be committed)
+.local/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# More Python cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
