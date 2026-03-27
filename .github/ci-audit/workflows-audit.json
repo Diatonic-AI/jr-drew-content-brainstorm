@@ -1,0 +1,218 @@
+{
+  "repo": "Diatonic-AI/jr-drew-content-brainstorm",
+  "failedRunsCount": 28,
+  "topFailedRuns": [
+    {
+      "name": "Push on main",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18982711049",
+      "createdAt": "2025-10-31T19:09:40Z",
+      "databaseId": 18982711049
+    },
+    {
+      "name": "Push on main",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18982502791",
+      "createdAt": "2025-10-31T19:01:08Z",
+      "databaseId": 18982502791
+    },
+    {
+      "name": "Push on main",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18982484938",
+      "createdAt": "2025-10-31T19:00:25Z",
+      "databaseId": 18982484938
+    },
+    {
+      "name": "Push on main",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18982052445",
+      "createdAt": "2025-10-31T18:41:11Z",
+      "databaseId": 18982052445
+    },
+    {
+      "name": "Push on main",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981147652",
+      "createdAt": "2025-10-31T18:03:51Z",
+      "databaseId": 18981147652
+    },
+    {
+      "name": ".github/workflows/web-deploy.yml",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981133781",
+      "createdAt": "2025-10-31T18:03:16Z",
+      "databaseId": 18981133781
+    },
+    {
+      "name": "CI",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981068102",
+      "createdAt": "2025-10-31T18:00:44Z",
+      "databaseId": 18981068102
+    },
+    {
+      "name": ".github/workflows/web-deploy.yml",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981066427",
+      "createdAt": "2025-10-31T18:00:40Z",
+      "databaseId": 18981066427
+    },
+    {
+      "name": "CI",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980911443",
+      "createdAt": "2025-10-31T17:53:25Z",
+      "databaseId": 18980911443
+    },
+    {
+      "name": ".github/workflows/web-deploy.yml",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980911096",
+      "createdAt": "2025-10-31T17:53:24Z",
+      "databaseId": 18980911096
+    },
+    {
+      "name": "CI",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980867921",
+      "createdAt": "2025-10-31T17:51:28Z",
+      "databaseId": 18980867921
+    },
+    {
+      "name": ".github/workflows/web-deploy.yml",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980867470",
+      "createdAt": "2025-10-31T17:51:27Z",
+      "databaseId": 18980867470
+    },
+    {
+      "name": "Functions CI",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980673639",
+      "createdAt": "2025-10-31T17:42:53Z",
+      "databaseId": 18980673639
+    },
+    {
+      "name": "Deploy MkDocs to GitHub Pages",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980673616",
+      "createdAt": "2025-10-31T17:42:53Z",
+      "databaseId": 18980673616
+    },
+    {
+      "name": "CI",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980673614",
+      "createdAt": "2025-10-31T17:42:53Z",
+      "databaseId": 18980673614
+    },
+    {
+      "name": "Docs Deploy",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980673601",
+      "createdAt": "2025-10-31T17:42:53Z",
+      "databaseId": 18980673601
+    },
+    {
+      "name": "Docs Deploy",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980673582",
+      "createdAt": "2025-10-31T17:42:53Z",
+      "databaseId": 18980673582
+    },
+    {
+      "name": ".github/workflows/web-deploy.yml",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980672975",
+      "createdAt": "2025-10-31T17:42:51Z",
+      "databaseId": 18980672975
+    },
+    {
+      "name": "Deploy MkDocs to GitHub Pages",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18924829918",
+      "createdAt": "2025-10-29T23:20:50Z",
+      "databaseId": 18924829918
+    },
+    {
+      "name": "CI",
+      "url": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18924829909",
+      "createdAt": "2025-10-29T23:20:50Z",
+      "databaseId": 18924829909
+    }
+  ],
+  "longestJobs": [
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18924829909",
+      "jobName": "build",
+      "durationMinutes": 17.57,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "failure"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980673614",
+      "jobName": "build",
+      "durationMinutes": 11.77,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "cancelled"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18982052445",
+      "jobName": "Analyze (python)",
+      "durationMinutes": 10.23,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "success"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981147652",
+      "jobName": "Analyze (python)",
+      "durationMinutes": 10.23,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "success"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981068102",
+      "jobName": "build",
+      "durationMinutes": 8.43,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "failure"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980867921",
+      "jobName": "build",
+      "durationMinutes": 3.67,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "cancelled"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981147652",
+      "jobName": "Analyze (c-cpp)",
+      "durationMinutes": 2.73,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "success"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18982052445",
+      "jobName": "Analyze (c-cpp)",
+      "durationMinutes": 2.37,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "success"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18980911443",
+      "jobName": "build",
+      "durationMinutes": 1.98,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "cancelled"
+    },
+    {
+      "runUrl": "https://github.com/Diatonic-AI/jr-drew-content-brainstorm/actions/runs/18981147652",
+      "jobName": "Analyze (javascript-typescript)",
+      "durationMinutes": 1.32,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "conclusion": "success"
+    }
+  ]
+}
